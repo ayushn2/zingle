@@ -16,18 +16,20 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <>
-      <ThemeProvider
-      attribute="class"
-      defaultTheme="dark"
-      enableSystem
-      disableTransitionOnChange
-      >
+    <html lang="en">
+      
         <body className={space_grotesk.className}>
+          <ThemeProvider
+          attribute="class"
+          defaultTheme="dark"
+          enableSystem
+          disableTransitionOnChange
+          >
           {children}
+          </ThemeProvider>
         </body>
-      </ThemeProvider>
      
-    </>
+     
+    </html>
   );
 }
