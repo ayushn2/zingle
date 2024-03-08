@@ -1,23 +1,11 @@
-"use client"
-
 import React from 'react'
 import { Button } from './ui/button'
-import {supabaseBrowser} from '@/utils/supabase/client'
 import {User} from "@supabase/supabase-js"
+import SignOut from './SignOut'
 
-const ChatHeader = ({user}:{user:User|undefined}) => {
+const ChatHeader = () => {
 
-    const handleLoginWithGithub = ()=> {
-        const supabase = supabaseBrowser()
-
-        supabase.auth.signInWithOAuth({
-            provider:"github",
-            options:{
-                redirectTo: location.origin + "/auth/callback",
-            },
-        })
-
-    }
+   
 
   return (<>
   <div className="h-20">
@@ -32,7 +20,7 @@ const ChatHeader = ({user}:{user:User|undefined}) => {
           <h1 className="text-sm text-gray-400">2 online</h1>
         </div>
       </div>
-      {user?(
+      {/* {user?(
       <Button onClick={handleLoginWithGithub}>
         Logout
       </Button>):
@@ -41,7 +29,10 @@ const ChatHeader = ({user}:{user:User|undefined}) => {
         Login
         </Button>
       )}
-     
+      */}
+      <SignOut/>
+
+      
       
     </div>
   </div> 

@@ -1,26 +1,27 @@
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import ChatHeader from "@/components/ChatHeader";
-import { login } from "./login/actions";
-import { signup } from "./login/actions";
+
+import { SupabaseAuthClient } from "@supabase/supabase-js/dist/module/lib/SupabaseAuthClient";
 
 
+
+import readUserSession from "@/lib/actions";
+import { redirect } from "next/navigation";
 
 export default async function Page() {
 
+  const {data} = await readUserSession();
+
+  if(!data.session){
+    return redirect("/auth-server-action")
+  }
 
   return (
     <div className="max-w-3xl mx-auto md:py:10 h-scream">
       <div className="h-full border rounded-md">
-        {/* <ChatHeader user={user}/> */}
-        <form>
-      <label htmlFor="email">Email:</label>
-      <input id="email" name="email" type="email" required />
-      <label htmlFor="password">Password:</label>
-      <input id="password" name="password" type="password" required />
-      <button formAction={login}>Log in</button>
-      <button formAction={signup}>Sign up</button>
-    </form>
+        <ChatHeader />
+        
       </div>
     </div>
   );
