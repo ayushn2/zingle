@@ -2,10 +2,12 @@ import React from 'react'
 import { Button } from './ui/button'
 import {User} from "@supabase/supabase-js"
 import SignOut from './SignOut'
+import readUserSession from '@/lib/actions'
+import SignIn from './SignIn'
 
-const ChatHeader = () => {
+const ChatHeader = async () => {
 
-   
+  const {data} = await readUserSession();
 
   return (<>
   <div className="h-20">
@@ -30,7 +32,8 @@ const ChatHeader = () => {
         </Button>
       )}
       */}
-      <SignOut/>
+      {data.session?(<SignOut/>):(<SignIn/>)}
+      
 
       
       

@@ -11,11 +11,12 @@ import { redirect } from "next/navigation";
 
 export default async function Page() {
 
-  const {data} = await readUserSession();
+  // const {data} = await readUserSession();
 
-  if(!data.session){
-    return redirect("/auth-server-action")
-  }
+  // if(!data.session){
+  //   return redirect("/auth-server-action")
+  // }
+  
 
   return (
     <div className="max-w-3xl mx-auto md:py:10 h-scream">

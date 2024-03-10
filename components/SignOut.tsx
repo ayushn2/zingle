@@ -10,7 +10,6 @@ import { Button } from "./ui/button";
         await supabase.auth.signOut();
         redirect("/auth-server-action");
     };
-
     return(
         <form action={logout}>
             <Button>SignOut</Button>
