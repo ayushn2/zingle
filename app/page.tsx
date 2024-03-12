@@ -8,21 +8,26 @@ import { SupabaseAuthClient } from "@supabase/supabase-js/dist/module/lib/Supaba
 
 import readUserSession from "@/lib/actions";
 import { redirect } from "next/navigation";
+import ChatInput from "@/components/ChatInput";
+import ListMessages from "@/components/ListMessages";
+import ChatMessages from "@/components/ChatMessages";
+
 
 export default async function Page() {
 
-  // const {data} = await readUserSession();
+  const {data} = await readUserSession();
 
-  // if(!data.session){
-  //   return redirect("/auth-server-action")
-  // }
+  if(!data.session){
+    return redirect("/auth-server-action")
+  }
   
 
   return (
-    <div className="max-w-3xl mx-auto md:py:10 h-scream">
-      <div className="h-full border rounded-md">
+    <div className="max-w-3xl mx-auto md:py:10 h-screen">
+      <div className="h-full border rounded-md flex flex-col">
         <ChatHeader />
-        
+        <ChatMessages/>
+       <ChatInput/>
       </div>
     </div>
   );

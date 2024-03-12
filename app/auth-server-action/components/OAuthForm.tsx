@@ -6,24 +6,24 @@ import React from "react";
 
 export default function OAuthForm() {
 
-    // const supabase = createBrowserClient(
+    const supabase = createBrowserClient(
 
-    //     process.env.NEXT_PUBLIC_SUPABASE_URL!,
+        process.env.NEXT_PUBLIC_SUPABASE_URL!,
     
-    //     process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
+        process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
     
-    // )
+    )
 
-    // const loginWithGithub = ()=>{
+    const loginWithGithub = ()=>{
 
-    //     supabase.auth.signInWithOAuth({
-    //         provider:"github",
-    //         options:{
-    //             redirectTo:`${location.origin}/auth-server-action/callback`,
-    //         }
-    //     })
+        supabase.auth.signInWithOAuth({
+            provider:"github",
+            options:{
+                redirectTo:`${location.origin}/auth-server-action/callback`,
+            }
+        })
 
-    // }
+    }
 
-	return <Button className="w-full">Login With Github</Button>;
+	return <Button onClick={loginWithGithub} className="w-full">Login With Github</Button>;
 }

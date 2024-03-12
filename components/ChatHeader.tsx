@@ -11,7 +11,7 @@ const ChatHeader = async () => {
 
   return (<>
   <div className="h-20">
-    <div className="p-5 border-b flex item-center justify-between">
+    <div className="p-5 border-b flex item-center justify-between h-full">
 
       <div>
         <h1 className="text-xl font-bold">Zingle</h1>
@@ -32,8 +32,8 @@ const ChatHeader = async () => {
         </Button>
       )}
       */}
-      {data.session?(<SignOut/>):(<SignIn/>)}
-      
+      {/* {data.session?(<SignOut/>):(<SignIn/>)} */}
+      <SignOut/>
 
       
       
