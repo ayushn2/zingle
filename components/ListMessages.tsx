@@ -2,6 +2,7 @@
 
 import { useMessage } from "@/lib/store/messages"
 import Message from "./Message"
+import { DeleteAlert } from "./MessageActions"
 
 const ListMessages = () => {
 
@@ -20,6 +21,7 @@ const ListMessages = () => {
                 })}
                 
               </div>
+              <DeleteAlert/>
             </div>
   )
 }
