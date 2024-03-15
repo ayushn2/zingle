@@ -26,7 +26,13 @@ const MessageMenu = ({message}:{message:Imessage}) => {
                 <DropdownMenuLabel>Action</DropdownMenuLabel>
                 <DropdownMenuSeparator />
                 <DropdownMenuItem 
-                >Edit</DropdownMenuItem>
+                onClick={()=>{
+                    document.getElementById("trigger-edit")?.click();
+                    setActionMessage(message);
+                }}
+                >
+                    Edit
+                </DropdownMenuItem>
                 <DropdownMenuItem 
                 className='text-red-600' 
                 onClick={()=>{
