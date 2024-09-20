@@ -3,6 +3,8 @@ import { useForm } from "react-hook-form";
 import * as z from "zod";
 import { AiOutlineLoading3Quarters } from "react-icons/ai";
 import { useTransition } from "react";
+import { useToast } from "@/hooks/use-toast"
+
 
 import {
 	Form,
@@ -15,7 +17,7 @@ import {
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 
-import { toast } from "@/components/ui/use-toast";
+import { Toast } from "@/components/ui/toast";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { signUpWithEmailAndPassword } from "../actions";
@@ -35,6 +37,7 @@ const FormSchema = z
 		path: ["confirm"],
 	});
 export default function RegisterForm() {
+	const { toast } = useToast()
 
     const [isPending,startTransition] = useTransition()
 
@@ -147,7 +150,13 @@ async function onSubmit(data: z.infer<typeof FormSchema>) {
 						</FormItem>
 					)}
 				/>
-				<Button type="submit" className="w-full flex gap-2">
+				<Button  
+				onClick={() => {
+						toast({
+						title: "Scheduled: Catch up",
+						description: "Friday, February 10, 2023 at 5:57 PM",
+						})
+					}} type="submit" className="w-full flex gap-2">
 					Register
 					<AiOutlineLoading3Quarters className={cn("animate-spin",{"hidden":!isPending})} />
 				</Button>

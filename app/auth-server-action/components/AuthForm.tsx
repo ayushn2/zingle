@@ -20,7 +20,7 @@ export function AuthForm() {
 					<RegisterForm />
 				</TabsContent>
 			</Tabs>
-			<OAuthForm />
+			
 		</div>
 	);
 }

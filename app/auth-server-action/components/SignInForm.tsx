@@ -12,7 +12,7 @@ import {
 	FormMessage,
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
-import { toast } from "@/components/ui/use-toast";
+import { useToast } from "@/hooks/use-toast";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { signInWithEmailAndPassword } from "../actions";
@@ -26,6 +26,7 @@ const FormSchema = z.object({
 });
 
 export default function SignInForm() {
+	const { toast } = useToast()
 
     const [isPending,startTransition] = useTransition()
 
@@ -58,7 +59,7 @@ export default function SignInForm() {
             });
         }else{
             toast({
-                title: "You submitted the following values:",
+                title: "Success!!",
                 description: (
                     <pre className="mt-2 w-[340px] rounded-md bg-slate-950 p-4">
                         <code className="text-white">
