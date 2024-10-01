@@ -6,6 +6,9 @@ const nextConfig = {
 //         protocol:"https",
 //     }]
 // }
+images: {
+    domains: ['res.cloudinary.com'],
+  },
 
 };
 

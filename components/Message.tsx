@@ -14,12 +14,29 @@ import { usernames } from '@/lib/constant'
 import Image from 'next/image'
 
 const Message = ({message}:{message:Imessage}) => {
-
+    
+    function generateIntegerFromInput(input: string | undefined): number {
+        if (input === undefined) {
+            return 1; // Default to 1 if input is undefined
+        }
+    
+        let hash = 0;
+        for (let i = 0; i < input.length; i++) {
+            const char = input.charCodeAt(i);
+            hash = (hash << 5) - hash + char;
+            hash = hash & hash; // Convert to a 32-bit integer
+        }
+    
+        // Map the result to a range between 1 and 15
+        const result = (Math.abs(hash) % 15) + 1;
+        return result;
+    }
+    const un_num = generateIntegerFromInput(message.users?.id);
     const user = useUser((state)=>state.user);
   return (
         <div className="flex gap-2">
-                <div className="h-10 w-10 rounded-full flex items-center justify-center">
-                    <Image className='rounded-full' src={`${usernames[message.users?.serial_number].image}`} alt='pfp' height={50} width={50}/>
+                <div className="h-10 w-10 rounded-full bg-red-300 flex items-center justify-center">
+                    <Image className='rounded-full' src={`${usernames[un_num].image}`} alt='pfp' height={50} width={50}/>
                 </div>
             <div className="flex-1">
                 <div className="flex items-center justify-between">
@@ -27,7 +44,8 @@ const Message = ({message}:{message:Imessage}) => {
 
                    
                      <h1 className="font-bold">
-                        {usernames[message.users?.serial_number].username}
+                        {`${usernames[un_num].username}`}
+                       
                     </h1>
                      <h1 className="text-sm text-gray-400">
                         {new Date(message.created_at).toDateString()}
@@ -51,4 +69,3 @@ const Message = ({message}:{message:Imessage}) => {
 }
 
 export default Message
-
