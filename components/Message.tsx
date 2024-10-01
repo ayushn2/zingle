@@ -17,17 +17,17 @@ const Message = ({message}:{message:Imessage}) => {
     
     function generateIntegerFromInput(input: string | undefined): number {
         if (input === undefined) {
-            return 1; // Default to 1 if input is undefined
+            return 1;
         }
     
         let hash = 0;
         for (let i = 0; i < input.length; i++) {
             const char = input.charCodeAt(i);
             hash = (hash << 5) - hash + char;
-            hash = hash & hash; // Convert to a 32-bit integer
+            hash = hash & hash; 
         }
     
-        // Map the result to a range between 1 and 15
+    
         const result = (Math.abs(hash) % 15) + 1;
         return result;
     }
