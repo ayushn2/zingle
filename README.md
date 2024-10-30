@@ -7,9 +7,9 @@ Zingle is a modern chat application built with Next.js, TypeScript, Tailwind CSS
 - [Features](#features)
 - [Tech Stack](#tech-stack)
 - [Getting Started](#getting-started)
-  - [Prerequisites](#prerequisites)
-  - [Installation](#installation)
-  - [Configuration](#configuration)
+- [Prerequisites](#prerequisites)
+- [Installation](#installation)
+- [Configuration](#configuration)
 - [Usage](#usage)
 - [Project Structure](#project-structure)
 - [Contributing](#contributing)
@@ -28,8 +28,8 @@ Zingle is a modern chat application built with Next.js, TypeScript, Tailwind CSS
 - **Frontend:** Next.js, TypeScript, Tailwind CSS, ShadCN/UI
 - **Backend:** Supabase (for Authentication and Real-Time Database)
 - **Additional Libraries:** 
-  - **Supabase Client:** For handling database operations.
-  - **ShadCN/UI:** For customizable components.
+- **Supabase Client:** For handling database operations.
+- **ShadCN/UI:** For customizable components.
 
 ## Getting Started
 
@@ -49,9 +49,9 @@ Zingle is a modern chat application built with Next.js, TypeScript, Tailwind CSS
 
 2. **Install Dependencies:**
     ```bash
-      npm install
-      #or
-      yarn install
+    npm install
+    #or
+    yarn install
 
 3. **Set Up Supabase:**
 
@@ -82,15 +82,15 @@ Zingle is a modern chat application built with Next.js, TypeScript, Tailwind CSS
 
 1. Run the Development Server:
     ```bash
-       npm run dev
+    npm run dev
 
 Open http://localhost:3000 to view it in your browser.
 
-2.	User Authentication:
+2. User Authentication:
 - Users must register with their email address.
 - After verification, they can log in and access chat functionalities.
 
-3.	Real-Time Messaging:
+3. Real-Time Messaging:
 - Send, edit, and delete messages.
 - Messages are displayed instantly for all users in the chat.
 
