@@ -11,9 +11,7 @@ Zingle is a modern chat application built with Next.js, TypeScript, Tailwind CSS
 - [Installation](#installation)
 - [Configuration](#configuration)
 - [Usage](#usage)
-- [Project Structure](#project-structure)
 - [Contributing](#contributing)
-- [License](#license)
 
 ## Features
 
