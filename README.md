@@ -60,8 +60,9 @@ Zingle is a modern chat application built with Next.js, TypeScript, Tailwind CSS
 4. **Create Environment Variables:**
 
     ```bash
-    NEXT_PUBLIC_SUPABASE_URL=your-supabase-url
-    NEXT_PUBLIC_SUPABASE_ANON_KEY=your-supabase-anon-key
+    NEXT_PUBLIC_SUPABASE_URL = <your-supabase-url>
+    NEXT_PUBLIC_SUPABASE_ANON_KEY = <your-supabase-anon-key>
+    NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME = <your-cloud-name>
 
 
 ## Configuration
